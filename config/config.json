@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "eOT&s7B8a0&y",
+    "database": "quizify",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "quizify_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "quizify_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
