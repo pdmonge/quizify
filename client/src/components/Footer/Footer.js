@@ -1,13 +1,15 @@
 import React from 'react';
-import { Container, Col, Footer, Row } from 'mdbreact';
-import GCPphotoCredit from './GCPphotoCredit/GCPphotoCredit';
+import { Container, Col, Row } from '../Grid';
+import backgroundPattern from '../../img/pattern.png';
+import GCPphotoCredit from '../GCPphotoCredit/GCPphotoCredit.js';
 
 const style = {
-  backgroundColor: "#303030",
+  backgroundImage: `url(${backgroundPattern})`,
   color: "white",
   position: "fixed",
   width: "100%",
-  bottom: 0
+  bottom: 0,
+  opacity: 0.95
 }
 
 const Footer = props => {
@@ -15,7 +17,7 @@ const Footer = props => {
     <footer style={style}>
       <Container fluid>
         <Row>
-          <Col className="col-md-12">
+          <Col size="md-12">
             <br />
             <p className="text-center">
               © 2017 Copyright: Redeye Solo
@@ -23,7 +25,7 @@ const Footer = props => {
           </Col>
         </Row>
         <Row>
-          <Col className="col-md-12">
+          <Col size="md-12">
             <p className="text-center">
               <GCPphotoCredit />
             </p>
@@ -34,4 +36,4 @@ const Footer = props => {
   );
 };
 
-export default FooterQ;
+export default Footer;

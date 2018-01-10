@@ -20,10 +20,25 @@ fs
 		return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
 	})
 	.forEach(function(file) {
-		var model = sequelize['import'](path.join(__dirname, file));
-		db[model.name] = model;
-	});
+    console.log(`
+      ****************************************************
+      file: ${file}
+    `);
 
+    var model = sequelize.import(path.join(__dirname, file));
+    console.log(`
+      ****************************************************
+      sequelize is defined: ${sequelize}
+      ****************************************************
+      model: ${JSON.stringify(model,null,2)}
+      ****************************************************
+      `);
+    if (model) db[model.name] = model;
+	});
+console.log(`
+db: ${JSON.stringify(Object.keys(db),null,2)}
+****************************************************
+`);
 Object.keys(db).forEach(function(modelName) {
 	if (db[modelName].associate) {
 		db[modelName].associate(db);
@@ -32,5 +47,7 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+db.sequelize.sync();
 
 module.exports = db;
