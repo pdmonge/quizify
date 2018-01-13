@@ -1,6 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import Icon from './QuizifyIconB.png';
+import LoginOutBtn from './LogInOutBtn';
 import { Link } from "react-router-dom";
+
+// Redux
+import { connect } from "react-redux";
+import { logoutUser } from '../../actions/user.actions';
 
 const style = {
   image: {
@@ -8,44 +13,31 @@ const style = {
   },
   brand: {
     fontWeight: "bold"  
-  },
-  loginButton: {
-    clear: "both",
-    position: "relative",
-    right: 10
   }
 }
 
-const Nav = () => {
-  return (
-    <nav className="navbar navbar-light bg-light">
-      <Link to="/" className="navbar-brand" style={style.brand}>
-        <img alt="Brand" src={Icon} style={style.image}/>
-        Quizify
-      </Link>
+class Nav extends Component {
+  render () {
+    return (
+      <nav className="navbar navbar-light bg-light">
+        <Link to="/" className="navbar-brand" style={style.brand}>
+          <img alt="Brand" src={Icon} style={style.image}/>
+          Quizify
+        </Link>
+        <LoginOutBtn />
+      </nav>
+    )
+  }
+}
 
-        <p className="nav navbar-nav">
-          <button className="btn btn-primary my-2 my-sm-0 navbar-btn" type="button">Log In</button>
-        </p>
-    </nav>
-  )
-};
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
 
-/* 
-  <nav classNameName="navbar navbar-inverse navbar-top">
-    <div classNameName="container-fluid">
-      <div classNameName="navbar-header">
-        <button type="button" classNameName="collapsed navbar-toggle">
-          <span classNameName="sr-only">Toggle navigation</span>
-          <span classNameName="icon-bar" /> <span classNameName="icon-bar" />
-          <span classNameName="icon-bar" />
-        </button>
-        <a href="/" classNameName="navbar-brand">
-          React Reading List
-        </a>
-      </div>
-    </div>
-  </nav>;
- */
+const navConnected = connect(
+  mapStateToProps
+)(Nav)
 
-export default Nav;
+export default navConnected;

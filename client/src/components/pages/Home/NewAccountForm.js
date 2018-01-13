@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 
-// import { connect } from "react-redux";
-// import { createUser } from '../../../actions/userActions';
-// import store from "../../../store";
+import { connect } from "react-redux";
+import { createUser } from '../../../actions/user.actions';
 
 const style = {
   submitButton: {
@@ -19,86 +17,114 @@ class NewAccountForm extends Component {
     this.state = {
       email: "",
       password: "",
-      emailClass: "form-control",
-      pwdClass: "form-control"
+      creator: false,
+      tester: false,
+      validEmail: false,
+      validPassword: false,
+      validForm: false
     }
 
     this.emailValidation = this.emailValidation.bind(this);
     this.pwdValidation = this.pwdValidation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.formValidation = this.formValidation.bind(this);
+    this.checkBoxChange = this.checkBoxChange.bind(this);
+  }
+
+  checkBoxChange (event) {
+    switch (event.target.name) {
+      case ("creator"): {
+        this.setState({creator: event.target.checked});
+        break;
+      }
+      case ("tester"): {
+        this.setState({tester: event.target.checked});
+        break;
+      }
+      default:
+        break;
+    }
   }
 
   emailValidation (event) {
     const newEmail = event.target.value;
-    let newEmailClass = "form-control";
-
-    if (newEmail.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/)) {  
-      newEmailClass += " is-valid";
-    } else {
-      newEmailClass += " is-notvalid";
-    }
-    this.setState({email: newEmail, emailClass: newEmailClass});
+    let isValidEmail = newEmail.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/)
+    this.setState({email: newEmail, validEmail: isValidEmail}, this.formValidation);
   }
 
   pwdValidation (event) {
     const newPwd = event.target.value;
-    let newPwdClass = "form-control";
+    const isValidPassword = newPwd.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
+    this.setState({password: newPwd, validPassword: isValidPassword}, this.formValidation);
+  }
 
-    // if (newPwd.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/)) {  
-    if (newPwd.length >= 8) {  
-      newPwdClass += " is-valid";
-    } else {
-      newPwdClass += " is-notvalid";
-    }
-    this.setState({password: newPwd, pwdClass: newPwdClass});
+  formValidation () {
+    let isValidForm = this.state.validForm;
+    isValidForm = (this.state.validEmail && this.state.validPassword && (this.state.creator || this.state.tester));
+    this.setState({validForm: isValidForm});
   }
 
   handleSubmit (event) {
     // Add code to make sure both email and pwd are of valid format
     event.preventDefault();
-
-    axios.post('/api/users', {
-      email: this.state.email,
-      password: this.state.password
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
+    this.setState({submitting: true}, () => {
+      this.props.dispatch(createUser({
+          email: this.state.email,
+          password: this.state.password,
+          creator: this.state.creator,
+          tester: this.state.tester
+      }));
     });
-
-    // return (
-    //   <Alert className="alert-success alert-dismissible">
-    //     The alert button was clicked!
-    //   </Alert>
-    // );
   }
 
   render () {
+    console.log(`******************************** NewAccountForm props: ${JSON.stringify(this.props, null, 2)}`);
+    if (this.state.submitting) {
+      return (
+        <div>
+          <h1>SUBMITTING</h1>
+        </div>
+      )
+    }
     return (
-    <form lpformnum="1">
+    <form lpformnum="1" disabled={!this.props.user.loggedIn} >
       <fieldset>
         <div className="form-group">
           <label htmlFor="emailInput">Email address</label>
-          <input type="email" value={this.state.email} className={this.state.emailClass} id="emailInput" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.emailValidation} />
-          <small id="emailHelp" className="form-text">We'll never share your email with anyone else.</small>
+          <input 
+            type="email"
+            value={this.state.email}
+            className={this.state.validEmail ? "form-control is-valid" : "form-control is-notvalid"}
+            id="emailInput"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            onChange={this.emailValidation}
+          />
+          <small id="emailHelp" className="form-text"> {this.state.emailMessage} </small>
         </div>
         <div className="form-group">
           <label htmlFor="passwordInput">Password</label>
-          <input type="password" className={this.state.pwdClass} id="passwordInput" placeholder="Password" />
+          <input
+            type="password"
+            className={this.state.validPassword ? "form-control is-valid" : "form-control is-notvalid"}
+            id="passwordInput"
+            aria-describedby="pwdHelp"
+            placeholder="Password"
+            onChange={this.pwdValidation}
+          />
+          <small id="pwdHelp" className="form-text"> {this.state.passwordMessage} </small>
         </div>
         <fieldset className="form-group">
           <p className="form-text" >Reason for Use (Required)</p>
           <div className="form-check">
             <label className="form-check-label">
-              <input className="form-check-input" type="checkbox" value="" checked="" />
+              <input className="form-check-input" type="checkbox" name="creator" onChange={this.checkBoxChange} />
               Create Quizzes
             </label>
           </div>
           <div className="form-check">
             <label className="form-check-label">
-              <input className="form-check-input" type="checkbox" value="" checked="" />
+              <input className="form-check-input" type="checkbox" name="tester" onChange={this.checkBoxChange} />
               Take Quiz(zes)
             </label>
           </div>
@@ -108,6 +134,17 @@ class NewAccountForm extends Component {
     </form>
     )
   }
+
+} /* End of NewAccountForm */
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
 }
 
-export default NewAccountForm;
+const newAccountFormConnected = connect(
+  mapStateToProps
+)(NewAccountForm)
+
+export default newAccountFormConnected;

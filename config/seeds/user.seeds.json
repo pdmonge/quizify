@@ -1,0 +1,120 @@
+[{
+    "email": "creator01@email.com",
+    "password": "P@ssword01",
+    "firstName": "Creator01",
+    "creator": "true",
+    "tester": "false"
+  },
+  {
+    "email": "creator02@email.com",
+    "password": "P@ssword02",
+    "firstName": "Creator02",
+    "creator": "true",
+    "tester": "false",
+    "topics": null
+  },
+  {
+    "email": "creator03@email.com",
+    "password": "P@ssword03",
+    "firstName": "Creator03",
+    "creator": "true",
+    "tester": "false",
+    "topics": null
+  },
+  {
+    "email": "creator04@email.com",
+    "password": "P@ssword04",
+    "firstName": "Creator04",
+    "creator": "true",
+    "tester": "false",
+    "topics": null
+  },
+  {
+    "email": "creator05@email.com",
+    "password": "P@ssword05",
+    "firstName": "Creator05",
+    "creator": "true",
+    "tester": "false",
+    "topics": null
+  },
+  {
+    "email": "tester06@email.com",
+    "password": "P@ssword06",
+    "firstName": "Creator06",
+    "creator": "false",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "tester07@email.com",
+    "password": "P@ssword07",
+    "firstName": "Creator07",
+    "creator": "false",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "tester08@email.com",
+    "password": "P@ssword08",
+    "firstName": "Creator08",
+    "creator": "false",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "tester09@email.com",
+    "password": "P@ssword09",
+    "firstName": "Creator09",
+    "creator": "false",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "tester10@email.com",
+    "password": "P@ssword10",
+    "firstName": "Creator10",
+    "creator": "false",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "creatertester11@email.com",
+    "password": "P@ssword11",
+    "firstName": "Creator11",
+    "creator": "true",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "creatertester12@email.com",
+    "password": "P@ssword12",
+    "firstName": "Creator12",
+    "creator": "true",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "creatertester13@email.com",
+    "password": "P@ssword13",
+    "firstName": "Creator13",
+    "creator": "true",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "creatertester14@email.com",
+    "password": "P@ssword14",
+    "firstName": "Creator14",
+    "creator": "true",
+    "tester": "true",
+    "topics": null
+  },
+  {
+    "email": "creatertester15@email.com",
+    "password": "P@ssword15",
+    "firstName": "Creator15",
+    "creator": "true",
+    "tester": "true",
+    "topics": null
+  }
+]

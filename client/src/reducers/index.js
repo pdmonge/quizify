@@ -4,9 +4,10 @@
 import { combineReducers } from "redux";
 
 // import tweets from "./tweetsReducer"
-import user from "./userReducer";
+import user from "./user.reducer";
+import topic from "./topic.reducer";
 
 export default combineReducers({
-  // tweets,
+  topic,
   user
 });

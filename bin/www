@@ -13,7 +13,6 @@ const http = require('http');
  */
 
 const PORT = process.env.PORT || 3001;
-console.log
 app.set('port', PORT);
 
 /**
@@ -88,4 +87,11 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log(
+    "*********************************************\n" +
+    new Date(Date.now()) + "\n" +
+    "Listening on:\n" +
+    JSON.stringify(addr,null,2) + "\n" +
+    "*********************************************"
+  );
 }
