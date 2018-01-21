@@ -22,17 +22,17 @@ router
   .route('/initusers/:password')
   .get(usersController.seedUsers);
 
-router
-  .route('/inittopics/:password')
-  .get(usersController.seedTopics);
+// router
+//   .route('/inittopics/:password')
+//   .get(usersController.seedTopics);
 
-router
-  .route('/initquestions/:password')
-  .get(usersController.seedQuestions);
+// router
+//   .route('/initquestions/:password')
+//   .get(usersController.seedQuestions);
 
-router
-  .route('/initanswers/:password')
-  .get(usersController.seedAnswers);
+// router
+//   .route('/initanswers/:password')
+//   .get(usersController.seedAnswers);
 
   // router.get('/:id', function(req, res, next) {
 //   console.log(`Find by ID route`);

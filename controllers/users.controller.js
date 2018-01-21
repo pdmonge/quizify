@@ -54,32 +54,6 @@ module.exports = {
     }
   }, /* End of seedUsers */
   
-  seedTopics: function(req, res) {
-    if (req.params.password === "eOT&s7B8a0&y") {
-      let topicSeeds = require('../config/seeds/topic.seeds');
-
-      db.User.findAll()
-      .then(dbUsers => {
-        dbUsers.forEach(user => {
-          if (topicSeeds[user.email]) {
-            topicSeeds[user.email].forEach(topic => {
-              topic.UserId = user.id;
-            })
-          }
-        })
-        return db.Topic.bulkCreate(topicSeeds);
-      })
-      .then(dbResult => {
-        console.log("================================\n" + 
-          "Result of Topic bulk Create: " + dbResult
-        );
-        res.json(dbResult);
-      })
-      .catch(err => res.json(err));
-    } else {
-      res.err("Incorrect Password");
-    }
-  }, /* End of seedTopics */
 
   seedQuestions: function(req, res) {
     if (req.params.password === "eOT&s7B8a0&y") {

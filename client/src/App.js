@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { history } from './helpers/';
 
 // Components and resources
 import backgroundImage from './img/glenn-carstens-peters-190592.jpg';
 import Nav from './components/Nav';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
 import Home from './components/pages/Home/Home';
-import Login from './components/pages/Login/Login';
+import { LoginPage } from './components/pages/LoginPage';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import './bootstrap.min.css';
 import './App.css';
@@ -20,12 +21,12 @@ const style = {
 const App = () => {
   
   return (
-    <Router>
+    <Router history={history}>
       <div style={style}>
         <Nav />
-        <Route path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Footer />
       </div>
     </Router>

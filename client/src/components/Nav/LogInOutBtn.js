@@ -1,26 +1,27 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+// import { history } from "../../helpers/";
 
 // Redux
 import { connect } from "react-redux";
 import { logoutUser } from '../../actions/user.actions';
 
-const style = {
-  clear: "both",
-  position: "relative",
-  right: 10
-}
+// const style = {
+//   clear: "both",
+//   position: "relative",
+//   right: 10
+// }
 
 class LogInOutBtn extends Component {
   constructor(props) {
     super(props);
 
-    this.handleLogout = this.handleLogout.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
   }
 
-  handleLogout(event) {
+  handleLogoutClick(event) {
     event.preventDefault();
-    console.log(`************************* Reached handleLogout`);
+    console.log(`************************* Reached handleLogoutClick`);
     this.props.dispatch(logoutUser);
   }  
 
@@ -28,14 +29,14 @@ class LogInOutBtn extends Component {
     if (this.props.user.loggedIn) {
       return (
         <p className="nav navbar-nav">
-          <button className="btn btn-info my-2 my-sm-0 navbar-btn" type="button" onClick={this.handleLogout} >Log Out</button>
+          <button className="btn btn-info my-2 my-sm-0 navbar-btn" type="button" onClick={this.handleLogoutClick} >Log Out</button>
         </p>
       )
     } else {
       return (
         <p className="nav navbar-nav">
-          <Link to="/login">
-            <button className="btn btn-primary my-2 my-sm-0 navbar-btn" type="button">Log In</button>
+          <Link to="/login" >
+            <button className="btn btn-primary my-2 my-sm-0 navbar-btn" type="button" >Log In</button>
           </Link>
         </p>
       )

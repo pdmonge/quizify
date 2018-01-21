@@ -1,9 +1,4 @@
-{
-  "creator01@email.com": [{
-      "name": "Logical Principals and Fallacies"
-    },
-    {
-      "name": "JavaScript"
-    }
-  ]
-}
+[
+  {"name": "Logical Principals and Fallacies"},
+  {"name": "JavaScript"}
+]

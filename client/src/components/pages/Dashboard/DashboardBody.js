@@ -19,9 +19,7 @@ const style = {
 }
 
 
-const topics = {
 
-}
 
 const DashboardBody = () => {
   return (

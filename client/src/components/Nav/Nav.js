@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
-import { logoutUser } from '../../actions/user.actions';
+// import { logoutUser } from '../../actions/user.actions';
 
 const style = {
   image: {

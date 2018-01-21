@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 // Redux
 import { connect } from "react-redux";
@@ -12,6 +12,8 @@ const style = {
 class Login extends Component {
   // constructor (props) {
   //   super(props);
+
+    
   // }
 
   render() {

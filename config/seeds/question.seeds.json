@@ -1,64 +1,22 @@
-{
-  "Logical Principals and Fallacies": [{
-      "text": "What is the answer to sample question 1?"
-    },
-    {
-      "text": "What is the answer to sample question 2?"
-    },
-    {
-      "text": "What is the answer to sample question 3?"
-    },
-    {
-      "text": "What is the answer to sample question 4?"
-    },
-    {
-      "text": "What is the answer to sample question 5?"
-    },
-    {
-      "text": "What is the answer to sample question 6?"
-    },
-    {
-      "text": "What is the answer to sample question 7?"
-    },
-    {
-      "text": "What is the answer to sample question 8?"
-    },
-    {
-      "text": "What is the answer to sample question 9?"
-    },
-    {
-      "text": "What is the answer to sample question 10?"
-    }
-  ],
-  "JavaScript": [{
-      "text": "What is the answer to sample question 1?"
-    },
-    {
-      "text": "What is the answer to sample question 2?"
-    },
-    {
-      "text": "What is the answer to sample question 3?"
-    },
-    {
-      "text": "What is the answer to sample question 4?"
-    },
-    {
-      "text": "What is the answer to sample question 5?"
-    },
-    {
-      "text": "What is the answer to sample question 6?"
-    },
-    {
-      "text": "What is the answer to sample question 7?"
-    },
-    {
-      "text": "What is the answer to sample question 8?"
-    },
-    {
-      "text": "What is the answer to sample question 9?"
-    },
-    {
-      "text": "What is the answer to sample question 10?"
-    }
-  ]
-}
+[
+  {"text": "What is the answer to sample question 1?"},
+  {"text": "What is the answer to sample question 2?"},
+  {"text": "What is the answer to sample question 3?"},
+  {"text": "What is the answer to sample question 4?"},
+  {"text": "What is the answer to sample question 5?"},
+  {"text": "What is the answer to sample question 6?"},
+  {"text": "What is the answer to sample question 7?"},
+  {"text": "What is the answer to sample question 8?"},
+  {"text": "What is the answer to sample question 9?"},
+  {"text": "What is the answer to sample question 10?"},
+  {"text": "What is the answer to sample question 1?"},
+  {"text": "What is the answer to sample question 2?"},
+  {"text": "What is the answer to sample question 3?"},
+  {"text": "What is the answer to sample question 4?"},
+  {"text": "What is the answer to sample question 5?"},
+  {"text": "What is the answer to sample question 6?"},
+  {"text": "What is the answer to sample question 7?"},
+  {"text": "What is the answer to sample question 8?"},
+  {"text": "What is the answer to sample question 9?"},
+  {"text": "What is the answer to sample question 10?"}
+]
