@@ -21,7 +21,7 @@ const JumbotronHome = props => {
         <img src={logo} className="logo" alt="logo" height="180px"/>
         <h1>
           <p>
-          the one-stop site for test creation
+          the one-stop site for quiz creation
           </p>
         </h1>
       </Row>

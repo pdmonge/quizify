@@ -45,10 +45,8 @@ export function logoutUser() {
         tester: null
     }
 
-    return {
-      type: "LOGOUT_USER_FULFILLED",
-      payload: newUserState
-    }
+    dispatch({type: 'LOGOUT_USER'});
+    dispatch({type: "LOGOUT_USER_FULFILLED",payload: newUserState});
     // axios.get(`/api/users/logout`, user)
     // .then(function (response) {
     //   dispatch({type: 'LOGOUT_USER_FULFILLED', payload: response.data});

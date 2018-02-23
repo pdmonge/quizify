@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import Qnavbar from "../../Qnavbar/";
 
 // Redux
 import { connect } from "react-redux";
@@ -15,17 +16,18 @@ class Dashboard extends Component {
   // }
 
   render() {
-    if (this.props.globalState.user.loggedIn) {
+    // if (this.props.globalState.user.loggedIn) {
       return (
         <div style={style}>
+          <Qnavbar page="dashboard" />
           <div className="panel">
             <p className="panel-body">Welcome to your dashboard!</p>
           </div>
         </div>
       )
-    } else {
-      return (<Redirect to="/" />)
-    }
+    // } else {
+    //   return (<Redirect to="/" />)
+    // }
   }
 }
 

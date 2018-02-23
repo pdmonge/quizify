@@ -36,7 +36,7 @@ const Body = () => {
           <div className="card text-white bg-info mb-3" style={style.card}>
             <div className="card-header text-center">FEATURES</div>
             <div className="card-body">
-              <h4 className="card-title">Test Creators:</h4>
+              <h4 className="card-title">Quiz Creators:</h4>
               <ul className="card-text">
                 <li>Create Topics</li>
                 <li>Create Questions Within Topics

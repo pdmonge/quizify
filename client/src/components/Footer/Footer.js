@@ -1,10 +1,12 @@
 import React from 'react';
-import { Container, Col, Row } from '../Grid';
-import backgroundPattern from '../../img/pattern.png';
+// import { Container, Col, Row } from '../Grid';
+import { Grid, Col, Row } from "react-bootstrap";
+// import backgroundPattern from '../../img/pattern.png';
 import GCPphotoCredit from '../GCPphotoCredit/GCPphotoCredit.js';
 
 const style = {
-  backgroundImage: `url(${backgroundPattern})`,
+  // backgroundImage: `url(${backgroundPattern})`,
+  backgroundColor: "rgba(0,0,0,0.7)",
   color: "white",
   position: "fixed",
   width: "100%",
@@ -15,23 +17,23 @@ const style = {
 const Footer = props => {
   return (
     <footer style={style}>
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
+      <Grid >
+        <Row className="show-grid" >
+          <Col md={12}>
             <br />
             <p className="text-center">
-              © 2017 Copyright: Redeye Solo
+              Created 2017 by Partha Monge<br/>License: GNU Lesser GPL Version 3, 29 June 2007
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col size="md-12">
+        <Row className="show-grid" >
+          <Col md={12}>
             <p className="text-center">
               <GCPphotoCredit />
             </p>
           </Col>
         </Row>
-      </Container>
+      </Grid>
     </footer>
   );
 };

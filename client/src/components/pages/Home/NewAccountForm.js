@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FadingCircle } from "better-react-spinkit";
 
 import { connect } from "react-redux";
 import { createUser } from '../../../actions/user.actions';
@@ -78,11 +79,12 @@ class NewAccountForm extends Component {
   }
 
   render () {
-    console.log(`******************************** NewAccountForm props: ${JSON.stringify(this.props, null, 2)}`);
+    // console.log(`******************************** NewAccountForm props: ${JSON.stringify(this.props, null, 2)}`);
     if (this.state.submitting) {
       return (
-        <div>
-          <h1>SUBMITTING</h1>
+        <div className="text-center" >
+          <h1>SUBMITTING...</h1>
+          <FadingCircle size={100} />
         </div>
       )
     }

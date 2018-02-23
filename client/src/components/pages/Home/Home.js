@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
+import Qnavbar from '../../Qnavbar';
 import JumbotronHome from './JumbotronHome';
 import Body from './Body';
 
@@ -17,10 +18,11 @@ class Home extends Component {
   // }
 
   render() {
-    console.log(`*******************************  Home props: ${JSON.stringify(this.props, null, 2)}`);
+    // console.log(`*******************************  Home props: ${JSON.stringify(this.props, null, 2)}`);
     if (!this.props.user.loggedIn) {
       return (
         <div style={style}>
+          <Qnavbar page="home" />
           <JumbotronHome />
           <Body />
         </div>
