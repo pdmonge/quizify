@@ -2,7 +2,7 @@
 
 ## Description:
 
-    Allows users to easily create quizzez/tests, have other users take the tests and either automatically grade the tests or allow the Creator to grade the tests. Can also generate printable PDF tests.
+    Allows users to easily create quizes/tests, have other users take the tests and either automatically grade the tests or allow the Creator to grade the tests. Can also generate printable PDF tests.
 
 ## Features:
     - User can create topics
